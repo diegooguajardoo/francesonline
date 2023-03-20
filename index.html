@@ -1,12 +1,294 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
+
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Francés Online</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Curso de Francés Online</title>
+	<link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Oxygen:700" rel="stylesheet">
+	<link href="images/favicon.ico" rel="icon">
+	<link rel="stylesheet" href="dist/css/style.css">
+	<script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
 </head>
-<body>
-	
+
+<body class="is-boxed has-animations">
+	<div class="body-wrap boxed-container">
+		<header class="site-header text-light">
+			<div class="container">
+				<div class="site-header-inner">
+					<div class="brand header-brand">
+						<h1 class="m-0">
+							<a href="#">
+								<img class="header-logo-image" src="dist/images/logo.svg" alt="Logo">
+							</a>
+						</h1>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero text-center text-light">
+				<div class="hero-bg"></div>
+				<div class="hero-particles-container">
+					<canvas id="hero-particles"></canvas>
+				</div>
+				<div class="container-sm">
+					<div class="hero-inner">
+						<div class="hero-copy">
+							<h1 class="hero-title mt-0">Curso de francés Jafra.</h1>
+							<p class="hero-paragraph">Comienza a aprender a lo largo de 5 sesiones online. </p>
+							<div class="hero-cta">
+								<div id="smart-button-container">
+									<div style="text-align: center;">
+										<div id="paypal-button-container"></div>
+									</div>
+								</div>
+								<script
+									src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=MXN"
+									data-sdk-integration-source="button-factory"></script>
+								<script>
+									function initPayPalButton() {
+										paypal.Buttons({
+											style: {
+												shape: 'rect',
+												color: 'blue',
+												layout: 'vertical',
+												label: 'pay',
+
+											},
+
+											createOrder: function (data, actions) {
+												return actions.order.create({
+													purchase_units: [{ "description": "5 sesiones de Francés en línea, material didáctico digital, y acceso a las grabaciones.", "amount": { "currency_code": "MXN", "value": 800 } }]
+												});
+											},
+
+											onApprove: function (data, actions) {
+												return actions.order.capture().then(function (orderData) {
+
+													// Full available details
+													console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+													// Show a success message within this page, e.g.
+													const element = document.getElementById('paypal-button-container');
+													element.innerHTML = '';
+													element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+													// Or go to another URL:  actions.redirect('thank_you.html');
+
+												});
+											},
+
+											onError: function (err) {
+												console.log(err);
+											}
+										}).render('#paypal-button-container');
+									}
+									initPayPalButton();
+								</script>
+							</div>
+						</div>
+						<div class="mockup-container">
+							<div class="mockup-bg">
+								<img src="dist/images/iphone-feature-bg-01.svg" alt="iPhone illustration">
+							</div>
+							<img class="device-mockup"
+								src="https://images.theconversation.com/files/339942/original/file-20200604-67393-1dej576.jpg?ixlib=rb-1.1.0&rect=1%2C82%2C997%2C498&q=45&auto=format&w=1356&h=668&fit=crop"
+								alt="iPhone Hero" style="border-radius:20px;">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="features-extended section">
+				<div class="features-extended-inner section-inner">
+					<div class="features-extended-wrap">
+						<div class="container">
+							<div class="feature-extended">
+								<div class="feature-extended-image">
+									<div class="mockup-bg">
+										<img src="dist/images/iphone-feature-bg-01.svg"
+											alt="iPhone Feature 01 illustration">
+									</div>
+									<img class="device-mockup is-revealing" src="https://m.media-amazon.com/images/I/61PG6nFbi4L._SX698_BO1,204,203,200_.jpg" style="width:75%"
+										alt="iPhone Feature 01">
+								</div>
+								<div class="feature-extended-body is-revealing">
+									<h3 class="mt-0 mb-16">Material didáctico incluído.</h3>
+									<p class="m-0">Solo necesitas tu dispoición. Todo el material didáctico viene incluído. Te envíaremos por correo un libro en formato pdf. Te recomendamos tener una libreta y <b>¡mucha disposición!</b></p>
+								</div>
+							</div>
+							<div class="feature-extended">
+								<div class="feature-extended-image">
+									<div class="mockup-bg">
+										<img src="dist/images/iphone-feature-bg-02.svg"
+											alt="iPhone Feature 02 illustration">
+									</div>
+									<img class="device-mockup is-revealing" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F391319449%2F28999508461%2F1%2Foriginal.20221110-220135?w=600&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C756%2C378&s=0d8f75232b8f5243d96db39417c1d4b7" style="border-radius: 20px"
+										alt="iPhone Feature 02">
+								</div>
+								<div class="feature-extended-body is-revealing">
+									<h3 class="mt-0 mb-16">Las sesiones serán grabadas.</h3>
+									<p class="m-0">Si en algún momento no puedes ingresar a la liga de zoom... <b>¡No te preocupes!</b> Las sesiones quedarán grabadas y podrás acceder a ellas sin problema.</p>
+								</div>
+							</div>
+							<div class="feature-extended">
+								<div class="feature-extended-image">
+									<div class="mockup-bg">
+										<img src="dist/images/iphone-feature-bg-03.svg"
+											alt="iPhone Feature 03 illustration">
+									</div>
+									<img class="device-mockup is-revealing" src="dist/images/iphone-feature-03.png"
+										alt="iPhone Feature 03">
+								</div>
+								<div class="feature-extended-body is-revealing">
+									<h3 class="mt-0 mb-16">Amazing features, coming soon.</h3>
+									<p class="m-0">Quam quisque id diam vel quam elementum pulvinar. Ut etiam sit amet
+										nisl purus in mollis nunc. Odio morbi quis commodo odio aenean sed adipiscing
+										diam donec.</p>
+								</div>
+							</div>
+							<div class="feature-extended">
+								<div class="feature-extended-image">
+									<div class="mockup-bg">
+										<img src="dist/images/iphone-feature-bg-04.svg"
+											alt="iPhone Feature 04 illustration">
+									</div>
+									<img class="device-mockup is-revealing" src="dist/images/iphone-feature-04.png"
+										alt="iPhone Feature 04">
+								</div>
+								<div class="feature-extended-body is-revealing">
+									<h3 class="mt-0 mb-16">Amazing features, coming soon.</h3>
+									<p class="m-0">Quam quisque id diam vel quam elementum pulvinar. Ut etiam sit amet
+										nisl purus in mollis nunc. Odio morbi quis commodo odio aenean sed adipiscing
+										diam donec.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="footer-particles-container">
+				<canvas id="footer-particles"></canvas>
+			</div>
+			<div class="site-footer-top">
+				<section class="cta section text-light">
+					<div class="container-sm">
+						<div class="cta-inner section-inner">
+							<div class="cta-header text-center">
+								<h3 class="section-title mt-0">¿Tienes alguna duda?</h3>
+								<p class="section-paragraph">Contacta directamente a tu profesor para preguntar cualquier cosa.</p>
+								<div class="cta-cta">
+									<a class="button button-primary button-wide-mobile" href="https://api.whatsapp.com/send?phone=528110511575&text=Hola,%20tengo%20una%20duda%20sobre%20el%20curso%20de%20franc%C3%A9s%20online.">Pregunta por whatsapp</a>
+									<script>
+										var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?50673';
+										var s = document.createElement('script');
+										s.type = 'text/javascript';
+										s.async = true;
+										s.src = url;
+										var options = {
+											"enabled": true,
+											"chatButtonSetting": {
+												"backgroundColor": "#4dc247",
+												"ctaText": "",
+												"borderRadius": "25",
+												"marginLeft": "0",
+												"marginBottom": "50",
+												"marginRight": "50",
+												"position": "right"
+											},
+											"brandSetting": {
+												"brandName": "Curso de Francés Jafra",
+												"brandSubTitle": "Responde a la brevedad.",
+												"brandImg": "https://github.com/diegooguajardoo/francesonline/blob/a50e7f616f8b034c35a5302c3e9262bf18a9c188/images/small-flag.png",
+												"welcomeText": "Hola! En qué te puedo ayudar?",
+												"messageText": "Hola, tengo una duda sobre el curso de francés online.",
+												"backgroundColor": "#0a5f54",
+												"ctaText": "Start Chat",
+												"borderRadius": "25",
+												"autoShow": false,
+												"phoneNumber": "528110511575"
+											}
+										};
+										s.onload = function () {
+											CreateWhatsappChatWidget(options);
+										};
+										var x = document.getElementsByTagName('script')[0];
+										x.parentNode.insertBefore(s, x);
+									</script>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="site-footer-bottom">
+				<div class="container">
+					<div class="site-footer-inner">
+						<div class="brand footer-brand">
+							<a href="#">
+								<img src="dist/images/logo.svg" alt="Venus logo">
+							</a>
+						</div>
+						<ul class="footer-links list-reset">
+							<li>
+								<a href="#">Contact</a>
+							</li>
+							<li>
+								<a href="#">About us</a>
+							</li>
+							<li>
+								<a href="#">FAQ's</a>
+							</li>
+							<li>
+								<a href="#">Support</a>
+							</li>
+						</ul>
+						<ul class="footer-social-links list-reset">
+							<li>
+								<a href="#">
+									<span class="screen-reader-text">Facebook</span>
+									<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z"
+											fill="#FFF" />
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="screen-reader-text">Twitter</span>
+									<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z"
+											fill="#FFF" />
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="screen-reader-text">Google</span>
+									<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z"
+											fill="#FFF" />
+									</svg>
+								</a>
+							</li>
+						</ul>
+						<div class="footer-copyright">&copy; 2018 Venus, all rights reserved</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="dist/js/main.min.js"></script>
 </body>
+
 </html>
