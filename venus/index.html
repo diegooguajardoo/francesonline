@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Venus Template</title>
 	<link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Oxygen:700" rel="stylesheet">
+	<link href="images/favicon.ico" rel="icon">
 	<link rel="stylesheet" href="dist/css/style.css">
 	<script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
 </head>
@@ -36,8 +37,8 @@
 				<div class="container-sm">
 					<div class="hero-inner">
 						<div class="hero-copy">
-							<h1 class="hero-title mt-0">Bienvenida al curso</h1>
-							<p class="hero-paragraph">Comienza a aprender este idioma durante 5 sesiones online. </p>
+							<h1 class="hero-title mt-0">Curso de francés Jafra.</h1>
+							<p class="hero-paragraph">Comienza a aprender a lo largo de 5 sesiones online. </p>
 							<div class="hero-cta">
 								<div id="smart-button-container">
 									<div style="text-align: center;">
@@ -184,6 +185,42 @@
 								<p class="section-paragraph">Contacta directamente a tu profesor para preguntar cualquier cosa.</p>
 								<div class="cta-cta">
 									<a class="button button-primary button-wide-mobile" href="https://api.whatsapp.com/send phone=8110511575text=This%20is%20a%20test">Pregunta por whatsapp</a>
+									<script>
+										var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?50673';
+										var s = document.createElement('script');
+										s.type = 'text/javascript';
+										s.async = true;
+										s.src = url;
+										var options = {
+											"enabled": true,
+											"chatButtonSetting": {
+												"backgroundColor": "#4dc247",
+												"ctaText": "",
+												"borderRadius": "25",
+												"marginLeft": "0",
+												"marginBottom": "50",
+												"marginRight": "50",
+												"position": "right"
+											},
+											"brandSetting": {
+												"brandName": "Curso de Francés Jafra",
+												"brandSubTitle": "Responde a la brevedad.",
+												"brandImg": "https://github.com/diegooguajardoo/francesonline/blob/a50e7f616f8b034c35a5302c3e9262bf18a9c188/images/small-flag.png",
+												"welcomeText": "Hola! En qué te puedo ayudar?",
+												"messageText": "Hola, tengo una duda sobre el curso de francés online.",
+												"backgroundColor": "#0a5f54",
+												"ctaText": "Start Chat",
+												"borderRadius": "25",
+												"autoShow": false,
+												"phoneNumber": "528110511575"
+											}
+										};
+										s.onload = function () {
+											CreateWhatsappChatWidget(options);
+										};
+										var x = document.getElementsByTagName('script')[0];
+										x.parentNode.insertBefore(s, x);
+									</script>
 								</div>
 							</div>
 						</div>
