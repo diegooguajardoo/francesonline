@@ -1332,8 +1332,8 @@ label {
 
 .hero .hero-particles-container {
 	position: absolute;
-	top: 0;
-	bottom: 42%;
+	top: 400px;
+	bottom: 400px;
 	left: 0;
 	right: 0
 }
@@ -1494,7 +1494,8 @@ label {
 }
 
 .mockup-container {
-	position: relative
+	position: relative;
+	margin-top: 100px;
 }
 
 .mockup-bg {
