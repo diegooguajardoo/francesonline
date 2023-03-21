@@ -363,7 +363,6 @@ a {
 	text-decoration: none
 }
 
-a:hover,
 a:active {
 	outline: 0;
 	text-decoration: underline
@@ -780,9 +779,11 @@ label {
 	background: #E4E8EE
 }
 
-.m-0 {
-	margin: 0
+.m-0,
+.m-0:hover {
+	margin: 0;
 	color: black;
+	text-decoration: normal;
 }
 
 .mt-0 {
